@@ -1,0 +1,78 @@
+/*!
+ * Animate on Scroll
+ * @author Code Greene
+ */
+
+@keyframes fadein {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@keyframes fadeup {
+	0% {opacity:0; transform:translateY(20px);}
+	100% {opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadedown {
+	0% {opacity:0; transform:translateY(-20px);}
+	100% {opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeleft {
+	0% {opacity:0; transform:translateX(20px);}
+	100% {opacity:1; transform:translateX(0);}
+}
+
+@keyframes faderight {
+	0% {opacity:0; transform:translateX(-20px);}
+	100% {opacity:1; transform:translateX(0);}
+}
+
+@keyframes wipeleft {
+    0% {clip-path:polygon(100% -30%, 100% -30%, 100% 130%, 100% 130%); opacity:0;}
+    99.9% {clip-path:polygon(-30% 0, 100% -30%, 100% 130%, 0 130%);}
+	100% {clip-path:none; opacity:1;}
+}
+
+@keyframes wiperight {
+	0% {clip-path:polygon(-30% 100%, -30% 100%, -30% -30%, -30% -30%); opacity:0;}
+	99.9% {clip-path:polygon(100% 130%, 0 130%, -30% 0, 100% -30%);}
+	100% {clip-path:none; opacity:1;}
+}
+
+@keyframes swing {
+    0% {transform:rotate(0deg); opacity:0;}
+    25% {transform:rotate(5deg);}
+    75% {transform:rotate(-5deg);}
+	100% {transform:rotate(0deg); opacity:1;}
+}
+
+
+/* Initially hide aos elements to allow for animation */
+.aos{visibility:hidden;}
+.aos.none{visibility:visible;} /* Use visibility to avoid affecting the layout */
+.aos.animate{visibility:visible; animation-fill-mode:both;}
+.aos.noDelay{animation-delay:0ms !important;}
+
+.animate.fadein{animation-name:fadein;}
+.animate.fadeup{animation-name:fadeup;}
+.animate.fadedown{animation-name:fadedown;}
+.animate.faderight{animation-name:faderight;}
+.animate.fadeleft{animation-name:fadeleft;}
+
+.animate.wiperight{animation-name:wiperight;}
+.animate.wipeleft{animation-name:wipeleft;}
+
+.animate.swing{animation-name:swing;}
+
+@media (prefers-reduced-motion:reduce) {
+	.aos,
+	.aos.animate{
+		visibility:visible !important;
+		animation:none !important;
+		transition:none !important;
+		transform:none !important;
+		opacity:1 !important;
+		clip-path:none !important;
+	}
+}
