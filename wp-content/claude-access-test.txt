@@ -1,0 +1,7 @@
+Claude Code access verification file.
+
+Created: 2026-09-09
+Purpose: confirm SFTP write access to WP Engine and git push access to the
+linked GitHub repository (jamesgrady-daxl/the-72-fund).
+
+Safe to delete once verified.
